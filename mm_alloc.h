@@ -30,6 +30,7 @@ void mm_free(void* ptr);
 
 typedef struct s_block *s_block_ptr;
 
+extern s_block_ptr head;
 
 
 /* block struct */
