@@ -2,17 +2,17 @@
  * mm_alloc.c
  *
  * Memory allocation setup:
- * this memory allocater will create a double linked list of memomry blocks. Each block will contain
+ * this memory allocator will create a double linked list of memory blocks. Each block will contain
  * information about: 	the size of the data it holds
  *			a pointer to the next memory block (the last block of list will point to null)
- * 			a pointer to the previous memomry block
+ * 			a pointer to the previous memory block
  *			an indicator if the block is reserved or not
- *			a pointer with it's own address (not a neccessity)
+ *			a pointer with it's own address (not a necessity)
  *			a pointer to the data segment of the block (this is what is presented to the user of this m. allocator
  * mm_malloc function (for user of library (public)):
- * this function will search for an available block that is both free and adequit in size. If it does find one it will attempt 
- * to split the block if the block is larger in size than required. If no block is apropriate then it will use sbrk to make 
- * more mememory available and add the new block at the end of the block list. 
+ * this function will search for an available block that is both free and adequate in size. If it does find one it will attempt 
+ * to split the block if the block is larger in size than required. If no block is appropriate then it will use sbrk to make 
+ * more memory available and add the new block at the end of the block list. 
  * On success the function will return a pointer to the data segment of the block.
  *
  *
@@ -32,8 +32,8 @@
  * is big enough for the required size, and that the second part is big enough for an int or bigger.
  * 
  * fusion function (not meant for user of library):
- * when a block becomes free, this function can be called upon to check wether the neighbouring blocks are free. If they are
- * free, then this function will merge this block with those neightbouring blocks that are free.
+ * when a block becomes free, this function can be called upon to check whether the neighbouring blocks are free. If they are
+ * free, then this function will merge this block with those neighbouring blocks that are free.
  * If only the next block is free, then the function will return the block pointer it started with, but the data will have
  * increased.
  * If the previous block is free then the block pointer that is returned is that of the previous block, which now would
@@ -46,7 +46,7 @@
  * given a data pointer, the function will return the pointer to the block holding that data.
  *
  * print_blocks:
- * this function prints out the list memeory blocks providing the following info:
+ * this function prints out the list memory blocks providing the following info:
  *		data block pointer
  *		data block pointer of next block
  *		data block pointer of previous block

@@ -10,7 +10,7 @@
 #ifndef _malloc_H_
 #define _malloc_H_
 
- /* Define the block size since the sizeof will be wrong */
+ /* Define the block size since the sizeof will be wrong *//*but then the code is not cross platform compatible!*/
 
 #define BLOCK_SIZE sizeof(struct s_block)
 
